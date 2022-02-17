@@ -1,9 +1,9 @@
-import { mainContainer } from "./main.js"
-
-
 const applicationState = {
     requests: {}
 }
+
+const mainContainer = document.querySelector("#container")
+
 
 const API = "http://localhost:8088"
 
@@ -53,6 +53,44 @@ export const deleteRequest = (id) => {
                 mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
+}
+
+export const fetchPlumbers = () => {
+    //fetch data
+    return fetch(`${API}/requests`)
+        //parse data as json
+        .then(response => response.json())
+        //what to do with the data
+        .then(
+            (serviceRequests) => {
+                // Store the external state in application state
+                applicationState.plumbers = serviceRequests
+            }
+        )
+}
+
+//Function to create and export new array of plumbers
+export const getPlumbers = () => {
+    return applicationState.plumbers.map(plumber => ({...plumber}))
+}
+
+export const sendPlumbers = (plumberRequest) => {
+    const fetchOptions = {
+        //The POST method on any HTTP request means "Hey API!! I want you to create something new!"
+        method: "POST",
+        //Add headers key with value of an object
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(plumberRequest)
+    }
+
+    return fetch(`${API}/requests`, fetchOptions)
+        .then(response => response.json())
+        .then(() => {
+            //Why not document????????
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        })
 }
 
 

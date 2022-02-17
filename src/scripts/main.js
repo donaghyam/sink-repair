@@ -2,9 +2,9 @@ import { fetchRequests } from "./dataAccess.js"
 import { SinkRepair } from "./SinkRepair.js"
 
 
-export const mainContainer = document.querySelector("#container")
+const mainContainer = document.querySelector("#container")
 
-const render = () => {
+export const render = () => {
     fetchRequests().then(
         () => {
             mainContainer.innerHTML = SinkRepair()

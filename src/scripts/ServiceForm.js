@@ -1,5 +1,6 @@
 import { sendRequest } from "./dataAccess.js"
-import { Requests } from "./Requests.js"
+import { render } from "./main.js"
+//import { Requests } from "./Requests.js"
 
 export const ServiceForm = () => {
     let html = `
@@ -46,7 +47,7 @@ mainContainer.addEventListener("click", clickEvent => {
 
         // Send the data to the API for permanent storage
         sendRequest(dataToSendToAPI)
-        Requests()
+        render()
         
     }
 })
