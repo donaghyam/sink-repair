@@ -1,0 +1,22 @@
+.field {
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.label {
+    display: flex;
+    font-size: larger;
+}
+
+.input {
+    display: flex;
+}
+
+.button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    color: blanchedalmond;
+    background-color: slateblue;
+}
