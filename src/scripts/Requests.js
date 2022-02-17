@@ -1,13 +1,12 @@
-import { deleteRequest, getRequests } from "./dataAccess.js"
+import { getRequests } from "./dataAccess.js"
+import { deleteRequest } from "./dataAccess.js"
 
 const convertRequestToListElement = (requestObject) => {
     
-    let html = 
-    `
-    <li>
+    let html = `<li>
     Request: ${requestObject.description} 
-    Needed completion:${requestObject.neededBy}
-    <button class="request_delete" id="request--${requestObject.id}>Delete</button>
+    Needed completion: ${requestObject.neededBy}
+    <button class="request_delete" id="request--${requestObject.id}">Delete</button>
     </li>
     `
     return html

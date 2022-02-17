@@ -3,20 +3,6 @@
   "completions": [],
   "requests": [
     {
-      "id": 1,
-      "description": "Aut sint voluptatem fugit eius quas molestiae modi.",
-      "address": "34445 Bianka Ports",
-      "budget": 400,
-      "neededBy": "2022-08-27"
-    },
-    {
-      "id": 2,
-      "description": "Sink sucks.",
-      "address": "123 What St.",
-      "budget": 50,
-      "neededBy": "2022-04-22"
-    },
-    {
       "id": 3,
       "description": "Bidet needs work.",
       "address": "456 Nihilism Dr.",
@@ -232,6 +218,13 @@
       "budget": "",
       "neededBy": "",
       "id": 33
+    },
+    {
+      "description": "",
+      "address": "",
+      "budget": "",
+      "neededBy": "",
+      "id": 34
     }
   ]
 }
