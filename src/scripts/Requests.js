@@ -8,6 +8,7 @@ const convertRequestToListElement = (requestObject) => {
     <button class="request_delete" id="request--${requestObject.id}">Delete</button>
     Request: ${requestObject.description} 
     Needed completion: ${requestObject.neededBy}
+    ${Plumbers(requestObject)}
     </li>
     `
     return html
@@ -39,7 +40,7 @@ mainContainer.addEventListener("click", click => {
     }
 })
 
-const Plumbers = (plumberObject, requestObject) => {
+const Plumbers = (requestObject) => {
    
     const plumbers = getPlumbers()
 
@@ -49,11 +50,35 @@ const Plumbers = (plumberObject, requestObject) => {
         ${
             plumbers.map(
                 plumber => {
-                    return `<option value="${requestObject.id}--${plumberObject.id}">${plumberObject.name}</option>`
+                    return `<option value="${requestObject.id}--${plumber.id}">${plumber.name}</option>`
                 }).join("")
         }
     </select>`
 }
+
+// mainContainer.addEventListener(
+//     "change",
+//     (event) => {
+//         if (event.target.id === "plumbers") {
+//             const [requestId, plumberId] = event.target.value.split("--")
+
+//             /*
+//                 This object should have 3 properties
+//                    1. requestId
+//                    2. plumberId
+//                    3. date_created
+//             */
+//             const completion = { }
+
+//             /*
+//                 Invoke the function that performs the POST request
+//                 to the `completions` resource for your API. Send the
+//                 completion object as a parameter.
+//              */
+
+//         }
+//     }
+// )
 
     // <select id="selectPlumber">
     // <option value="0">Select a plumber</option>
